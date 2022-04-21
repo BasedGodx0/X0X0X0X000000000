@@ -1,0 +1,29 @@
+MODS = {
+    [1019838723] = true; -- me
+}
+
+ADMIN = {
+    [271972769] = true; -- me
+    
+}
+
+--// Don't mess with anything below this
+function initiateNames()
+    game.Players.LocalPlayer.Character.Torso:FindFirstChild('TouchInterest'):Destroy()
+    for _,v in pairs(game:GetService('Players'):GetPlayers()) do
+        if v.Character then
+            if not v.Character.Torso:FindFirstChild('TouchInterest') then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🏈] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
+            end
+            if MODS[v.UserId] then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🔰] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
+            end
+            if ADMIN[v.UserId] then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[☢️] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
+            end
+        end
+    end
+end
+
+local successful, errored = pcall(initiateNames)
+return MODS
