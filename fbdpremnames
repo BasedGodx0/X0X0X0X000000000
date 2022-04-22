@@ -1,5 +1,6 @@
 MODS = {
     [1019838723] = true; -- me
+    [3394885524] = true; -- alt
 }
 
 ADMIN = {
