@@ -1,4 +1,4 @@
-MODS = {
+PREMIUM = {
     [1019838723] = true; -- me
 }
 
@@ -14,7 +14,7 @@ function initiateNames()
             if not v.Character.Torso:FindFirstChild('TouchInterest') then
                 v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🏈] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
             end
-            if MODS[v.UserId] then
+            if PREMIUM[v.UserId] then
                 v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🔰] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
             end
             if ADMIN[v.UserId] then
@@ -25,4 +25,4 @@ function initiateNames()
 end
 
 local successful, errored = pcall(initiateNames)
-return MODS
+return PREMIUM
