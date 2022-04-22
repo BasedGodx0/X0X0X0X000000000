@@ -8,7 +8,7 @@ ADMIN = {
 
 --// Don't mess with anything below this
 function initiateNames()
-    game.Players.LocalPlayer.Character.Torso:FindFirstChild('Interest'):Destroy()
+    game.Players.LocalPlayer.Character.Torso:FindFirstChild('TouchInterest'):Destroy()
     for _,v in pairs(game:GetService('Players'):GetPlayers()) do
         if v.Character then
             if not v.Character.Torso:FindFirstChild('TouchInterest') then
