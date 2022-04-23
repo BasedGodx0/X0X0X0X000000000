@@ -4,6 +4,7 @@ MODS = {
 
 ADMINS = {
     [271972769] = true;
+    [3394885524] = true;
 }
 
 function initiateNames()
