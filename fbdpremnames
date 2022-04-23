@@ -1,28 +1,25 @@
-PREMIUM = {
-    [1019838723] = true; -- me
+MODS = {
+    [1019838723] = true;
 }
 
-ADMIN = {
-    [271972769] = true; -- me
+ADMINS = {
+    [271972769] = true;
 }
 
---// Don't mess with anything below this
 function initiateNames()
-    game.Players.LocalPlayer.Character.UpperTorso:FindFirstChild('OriginalSize'):Destroy()
+    game.Players.LocalPlayer.Character.LowerTorso:FindFirstChild('OriginalSize'):Destroy()
     for _,v in pairs(game:GetService('Players'):GetPlayers()) do
         if v.Character then
-            if not v.Character.UpperTorso:FindFirstChild('OriginalSize') then
-                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🏈] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
-            end
-            if PREMIUM[v.UserId] then
-                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[🔰] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
-            end
-            if ADMIN[v.UserId] then
-                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[☢️] ' .. v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName)
+            if ADMINS[v.UserId] then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[👑] ' .. v.DisplayName)
+            elseif MODS[v.UserId] then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[⭐] ' .. v.DisplayName)
+            elseif not v.Character.LowerTorso:FindFirstChild('OriginalSize') then
+                v.Character:FindFirstChildWhichIsA('Humanoid').DisplayName = ('[😎] ' .. v.DisplayName)
             end
         end
     end
 end
 
 local successful, errored = pcall(initiateNames)
-return PREMIUM
+return MODS, ADMINS
