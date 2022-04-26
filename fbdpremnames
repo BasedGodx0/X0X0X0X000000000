@@ -19,7 +19,7 @@ local function main()
             end
         else
 	    if v.Character then
-	          if not v.Character.Torso:FindFirstChild("TouchInterest") then
+	          if not v.Character.Torso:FindFirstChild("roblox") then
 		        v.Character:FindFirstChild("Humanoid").DisplayName = "[🏈]"..v.DisplayName
 		  end
 	    end
