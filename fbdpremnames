@@ -18,12 +18,12 @@ local function main()
                 v.Character:FindFirstChild("Humanoid").DisplayName = "[☑️]"..v.DisplayName
             end
         else
-			if v.Character then
-				if not v.Character.Torso:FindFirstChild("Right Hip") then
-					v.Character:FindFirstChild("Humanoid").DisplayName = "[🏈]"..v.DisplayName
-				end
-			end
-		end
+	    if v.Character then
+	          if not v.Character.Torso:FindFirstChild("Right Hip") then
+		        v.Character:FindFirstChild("Humanoid").DisplayName = "[🏈]"..v.DisplayName
+		  end
+	    end
+	end
     end
 end
 
