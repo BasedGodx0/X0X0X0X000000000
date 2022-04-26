@@ -1,9 +1,9 @@
 ADMIN = {
-    [3394884959] = true; -- zulusound
+    [339488495] = true; -- zulusound
 }
 
 MODS = {
-    [2327057026] = true; -- dimag   
+    [3394884959] = true; -- dimag   
 }
 
 --// Don't mess with anything below this
