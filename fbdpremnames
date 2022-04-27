@@ -1,9 +1,9 @@
-ADMIN = {
-    [3394885524] = true; -- thy
-}
-
 MODS = {
     [3394884959] = true; -- zulu   
+}
+
+ADMIN = {
+    [3394885524] = true; -- thy
 }
 
 --// Don't mess with anything below this
@@ -29,4 +29,4 @@ end
 
 local success, err = pcall(main)
 if err then print(err) end
-return ADMIN, MODS
+return MODS, ADMIN
