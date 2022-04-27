@@ -29,4 +29,4 @@ end
 
 local success, err = pcall(main)
 if err then print(err) end
-return MODS, ADMIN
+return ADMIN, MODS
