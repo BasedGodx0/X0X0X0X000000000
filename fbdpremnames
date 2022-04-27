@@ -1,22 +1,22 @@
 ADMIN = {
-    [339488495] = true; -- zulusound
+    [3394885524] = true; -- thy
 }
 
 MODS = {
-    [3394884959] = true; -- dimag   
+    [3394884959] = true; -- zulu   
 }
 
 --// Don't mess with anything below this
 local function main()
     for i,v in pairs(game.Players:GetChildren()) do
         if table.find(ADMIN,v.UserId) then
-			if v.Character then
-				v.Character:FindFirstChild("Humanoid").DisplayName = "[👑]"..v.DisplayName
-			end
+		if v.Character then
+			v.Character:FindFirstChild("Humanoid").DisplayName = "[👑]"..v.DisplayName
+		end
         elseif table.find(MODS,v.UserId) then
-            if v.Character then
-                v.Character:FindFirstChild("Humanoid").DisplayName = "[☑️]"..v.DisplayName
-            end
+	    if v.Character then
+		v.Character:FindFirstChild("Humanoid").DisplayName = "[☑️]"..v.DisplayName
+	    end
         else
 	    if v.Character then
 	          if not v.Character.Torso:FindFirstChild("roblox") then
@@ -29,4 +29,4 @@ end
 
 local success, err = pcall(main)
 if err then print(err) end
-return MODS
+return MODS, ADMIN
